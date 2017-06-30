@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>此前追忆</title>
-  
+  <subtitle>此情可待成追忆</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-06-30T05:11:32.298Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://flylipf.github.io/"/>
+  <updated>2017-06-28T01:39:21.446Z</updated>
+  <id>http://flylipf.github.io/</id>
   
   <author>
     <name>lipf</name>
@@ -16,23 +16,9 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>article title</title>
-    <link href="http://yoursite.com/2017/06/30/article-title/"/>
-    <id>http://yoursite.com/2017/06/30/article-title/</id>
-    <published>2017-06-30T05:11:32.000Z</published>
-    <updated>2017-06-30T05:11:32.298Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/06/28/hello-world/"/>
-    <id>http://yoursite.com/2017/06/28/hello-world/</id>
+    <link href="http://flylipf.github.io/2017/06/28/hello-world/"/>
+    <id>http://flylipf.github.io/2017/06/28/hello-world/</id>
     <published>2017-06-28T01:39:21.445Z</published>
     <updated>2017-06-28T01:39:21.446Z</updated>
     
