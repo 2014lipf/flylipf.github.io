@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://flylipf.github.io/"/>
-  <updated>2017-06-30T08:17:36.078Z</updated>
+  <updated>2017-06-30T08:58:55.746Z</updated>
   <id>http://flylipf.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://flylipf.github.io/2017/06/30/404/"/>
+    <id>http://flylipf.github.io/2017/06/30/404/</id>
+    <published>2017-06-30T08:57:11.549Z</published>
+    <updated>2017-06-30T08:58:55.746Z</updated>
+    
+    <content type="html"><![CDATA[<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="robots" content="all">
+<meta name="robots" content="index,follow">
+<title>404</title>
+</head>
+<body>
+<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="https://flylipf.github.io" homepagename="fly"></script>
+</body>
+</html>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8;&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>启程</title>
