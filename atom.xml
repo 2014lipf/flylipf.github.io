@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://flylipf.github.io/"/>
-  <updated>2017-06-30T08:17:36.078Z</updated>
+  <updated>2017-07-31T09:36:36.443Z</updated>
   <id>http://flylipf.github.io/</id>
   
   <author>
@@ -16,17 +16,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>启程</title>
-    <link href="http://flylipf.github.io/2017/06/28/hello-world/"/>
-    <id>http://flylipf.github.io/2017/06/28/hello-world/</id>
-    <published>2017-06-28T01:39:21.445Z</published>
-    <updated>2017-06-30T08:17:36.078Z</updated>
+    <title>洞悉CPU Cache</title>
+    <link href="http://flylipf.github.io/2017/07/31/%E6%B4%9E%E6%82%89CPU%20Cache/"/>
+    <id>http://flylipf.github.io/2017/07/31/洞悉CPU Cache/</id>
+    <published>2017-07-31T07:59:37.558Z</published>
+    <updated>2017-07-31T09:36:36.443Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="后续更新进行期待"><a href="#后续更新进行期待" class="headerlink" title="后续更新进行期待"></a>后续更新进行期待</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="【CPU-Cache-】"><a href="#【CPU-Cache-】" class="headerlink" title="【CPU Cache 】"></a>【CPU Cache 】</h3><p> <strong>如今的CPU</strong>和几十年前的相比，其运行效率可谓天壤之别。在以前，CPU的工作频率和内存的总线的频率是处于一个量级的，CPU对内存的访问速度也只是比对寄存器的访问要慢一点点。但是近十几年来，CPU的工作频率大大增加，而内存的发展却无法赶上CPU的步伐。当然，当前技术并不是做不出来访问频率高的内存，而是SRAM那样的高速内存相对于普通内存DRAM而言，成本过高。因此，当前系统选择一个折中办法，即在CPU和内存之间引入高速缓存（cache），作为CPU和内存之间的通道。CPU Cache的性能介于寄存器和内存之间，系统常常把经常使用的数据放在Cache中，当对相同数据、内存地址相邻数据多次操作，这样就可以避免到从内存中获取数据，而直接从CPU Cache中获取数据，这样能够提升程序的性能。但是作为高级语言（C、C++、Java等）的开发者而言，有些不懂CPU Cache的人会说：既然我们的CPU Cache性能高，我们只要把我们的数据放在CPU Cache中，那样我们的性能会很高，其实不然。CPU Cache其实完全是透明的，我们是无法干涉它，也是无法察觉它是如何运行的，因为它完全是依赖硬件实现的。但我们可以了解CPU Cache，并合理利用CPU Cache设计自己的程序而给程序性能带来质的提升</p>
+<h3 id="【解析CPU架构】"><a href="#【解析CPU架构】" class="headerlink" title="【解析CPU架构】"></a>【解析CPU架构】</h3><p>下面是CPU Cache的简单的示意图：<br><img src="http://rdc.hundsun.com/portal/data/upload/201707/f_aaf1b569eb6b9ec83878e38f4312b8bf.png" alt="Alt text"><br>随着多核的发展，<strong>CPU Cache</strong>分成了三个级别：<code>L1 Cache</code>、 <code>L2 Cache</code>、<code>L3 Cache</code>。级别越低越接近CPU，所以速度也更快， 但是容量也越小。 L1 Cache是最接近CPU的，它容量最小，例如32K，但速度最快，每个核上都有一个L1 Cache（更加确切的来说每个核上有两个L1 Cache，一个存数据 L1d Cache，一个存指令 L1i Cache）。 L2 Cache 更大一些，例如256K，速度要慢一些，一般情况下每个核上都有一个独立的L2 Cache； L3 Cache是三级缓存中最大的一级，例如20MB，同时也是最慢的一级，在同一颗CPU插槽中所有的核共享一个L3 Cache。</p>
+<p><strong>Cache Line</strong>可以简单的理解为CPU Cache中的最小缓存单位。目前主流的CPU Cache的Cache Line大小都是64Bytes。即当我们程序需要从内存中读取一个字节的时候，事实上相邻的63字节同时从内存中加载到CPU Cache中，这样当CPU访问相邻的数据的时候，并不会从内存中读取数据，而从CPU Cache中即可访问到数据，这样就提高了速度。</p>
+<p>下图是CPU寄存器、缓存、内存的性能指标参考值：<br><img src="http://rdc.hundsun.com/portal/data/upload/201707/f_64028a63a62006782542d356391ff7d0.png" alt="Alt text"></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;后续更新进行期待&quot;&gt;&lt;a href=&quot;#后续更新进行期待&quot; class=&quot;headerlink&quot; title=&quot;后续更新进行期待&quot;&gt;&lt;/a&gt;后续更新进行期待&lt;/h3&gt;
+      &lt;h3 id=&quot;【CPU-Cache-】&quot;&gt;&lt;a href=&quot;#【CPU-Cache-】&quot; class=&quot;headerlink&quot; title=&quot;【CPU Cache 】&quot;&gt;&lt;/a&gt;【CPU Cache 】&lt;/h3&gt;&lt;p&gt; &lt;strong&gt;如今的CPU&lt;/strong&gt;和几十年前的
     
     </summary>
     

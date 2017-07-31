@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[启程]]></title>
-    <url>%2F2017%2F06%2F28%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[后续更新进行期待]]></content>
+    <title><![CDATA[洞悉CPU Cache]]></title>
+    <url>%2F2017%2F07%2F31%2F%E6%B4%9E%E6%82%89CPU%20Cache%2F</url>
+    <content type="text"><![CDATA[【CPU Cache 】 如今的CPU和几十年前的相比，其运行效率可谓天壤之别。在以前，CPU的工作频率和内存的总线的频率是处于一个量级的，CPU对内存的访问速度也只是比对寄存器的访问要慢一点点。但是近十几年来，CPU的工作频率大大增加，而内存的发展却无法赶上CPU的步伐。当然，当前技术并不是做不出来访问频率高的内存，而是SRAM那样的高速内存相对于普通内存DRAM而言，成本过高。因此，当前系统选择一个折中办法，即在CPU和内存之间引入高速缓存（cache），作为CPU和内存之间的通道。CPU Cache的性能介于寄存器和内存之间，系统常常把经常使用的数据放在Cache中，当对相同数据、内存地址相邻数据多次操作，这样就可以避免到从内存中获取数据，而直接从CPU Cache中获取数据，这样能够提升程序的性能。但是作为高级语言（C、C++、Java等）的开发者而言，有些不懂CPU Cache的人会说：既然我们的CPU Cache性能高，我们只要把我们的数据放在CPU Cache中，那样我们的性能会很高，其实不然。CPU Cache其实完全是透明的，我们是无法干涉它，也是无法察觉它是如何运行的，因为它完全是依赖硬件实现的。但我们可以了解CPU Cache，并合理利用CPU Cache设计自己的程序而给程序性能带来质的提升 【解析CPU架构】下面是CPU Cache的简单的示意图：随着多核的发展，CPU Cache分成了三个级别：L1 Cache、 L2 Cache、L3 Cache。级别越低越接近CPU，所以速度也更快， 但是容量也越小。 L1 Cache是最接近CPU的，它容量最小，例如32K，但速度最快，每个核上都有一个L1 Cache（更加确切的来说每个核上有两个L1 Cache，一个存数据 L1d Cache，一个存指令 L1i Cache）。 L2 Cache 更大一些，例如256K，速度要慢一些，一般情况下每个核上都有一个独立的L2 Cache； L3 Cache是三级缓存中最大的一级，例如20MB，同时也是最慢的一级，在同一颗CPU插槽中所有的核共享一个L3 Cache。 Cache Line可以简单的理解为CPU Cache中的最小缓存单位。目前主流的CPU Cache的Cache Line大小都是64Bytes。即当我们程序需要从内存中读取一个字节的时候，事实上相邻的63字节同时从内存中加载到CPU Cache中，这样当CPU访问相邻的数据的时候，并不会从内存中读取数据，而从CPU Cache中即可访问到数据，这样就提高了速度。 下图是CPU寄存器、缓存、内存的性能指标参考值：]]></content>
   </entry>
 </search>
