@@ -99,12 +99,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="此情追忆">
-<meta property="og:url" content="http://flylipf.github.io/archives/2017/index.html">
+<meta name="description" content="###基础概念  epoch：逻辑时钟,每条消息都被赋予zxid，zxid全局唯一，zxid有两部分组成：高32位是epoch，低32是epoch内的自增ID，由0开始。每次选出新的Leader，epoch会递增，同时zxid的低32为清0.  zxid：zab协议中，消息的编号只能由Leader节点来分配，这样我们可以通过zxid来准确判断事件的先后发生顺序。  ###选主流程  服务启动后，候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZooKeeper选主流程">
+<meta property="og:url" content="http://flylipf.github.io/2017/08/08/ZooKeeper选主流程/index.html">
 <meta property="og:site_name" content="此情追忆">
+<meta property="og:description" content="###基础概念  epoch：逻辑时钟,每条消息都被赋予zxid，zxid全局唯一，zxid有两部分组成：高32位是epoch，低32是epoch内的自增ID，由0开始。每次选出新的Leader，epoch会递增，同时zxid的低32为清0.  zxid：zab协议中，消息的编号只能由Leader节点来分配，这样我们可以通过zxid来准确判断事件的先后发生顺序。  ###选主流程  服务启动后，候">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-db5280d269b09b5a950ce7141dc9ee7a_b.png">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-14d24e9fe6f9ff4e90c51a85c702a2d6_b.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-abb3a37589c2be85b048eae41b0e96ab_b.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-c72a3ac6203930e1ee50c8f8c0ae210d_b.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-328b725c339d8b7be8975ccd3ee1184f_b.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8a40dc83e22c95b2ec3e0fea1de1c975_b.png">
+<meta property="og:updated_time" content="2017-08-08T05:54:59.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="此情追忆">
+<meta name="twitter:title" content="ZooKeeper选主流程">
+<meta name="twitter:description" content="###基础概念  epoch：逻辑时钟,每条消息都被赋予zxid，zxid全局唯一，zxid有两部分组成：高32位是epoch，低32是epoch内的自增ID，由0开始。每次选出新的Leader，epoch会递增，同时zxid的低32为清0.  zxid：zab协议中，消息的编号只能由Leader节点来分配，这样我们可以通过zxid来准确判断事件的先后发生顺序。  ###选主流程  服务启动后，候">
+<meta name="twitter:image" content="https://pic3.zhimg.com/v2-db5280d269b09b5a950ce7141dc9ee7a_b.png">
 
 
 
@@ -132,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://flylipf.github.io/archives/2017/"/>
+  <link rel="canonical" href="http://flylipf.github.io/2017/08/08/ZooKeeper选主流程/"/>
 
 
 
 
 
-  <title>归档 | 此情追忆</title>
+  <title>ZooKeeper选主流程 | 此情追忆</title>
   
 
 
@@ -177,7 +188,7 @@
 	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -315,103 +326,171 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 2 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/08/ZooKeeper选主流程/" itemprop="url">
-              
-                <span itemprop="name">ZooKeeper选主流程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-08T13:55:20+08:00"
-              content="2017-08-08" >
-          08-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/31/洞悉CPU Cache/" itemprop="url">
-              
-                <span itemprop="name">洞悉CPU Cache</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-31T15:59:37+08:00"
-              content="2017-07-31" >
-          07-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://flylipf.github.io/2017/08/08/ZooKeeper选主流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lipf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="此情追忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ZooKeeper选主流程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T13:55:20+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###基础概念</p>
+<blockquote>
+<p><strong>epoch</strong>：逻辑时钟,每条消息都被赋予zxid，zxid全局唯一，zxid有两部分组成：高32位是epoch，低32是epoch内的自增ID，由0开始。每次选出新的Leader，epoch会递增，同时zxid的低32为清0.</p>
+<p> <strong>zxid</strong>：zab协议中，消息的编号只能由Leader节点来分配，这样我们可以通过zxid来准确判断事件的先后发生顺序。</p>
+</blockquote>
+<p>###选主流程</p>
+<ul>
+<li>服务启动后，候选节点A初始化自身的zxid和epoch；</li>
+<li>向其他所有节点发送选主通知；</li>
+<li>等待其他节点的回复；</li>
+<li>比较节点B的回复信息以及B此时的运行状态，和自身的投票信息。</li>
+</ul>
+<p>####情况1：投票节点是LOOKING状态</p>
+<p>以下以图示法说明此时选主过程：</p>
+<p><strong>STEP 1：</strong>处于LOOKING状态的A发起一次选主请求，并将请求广播至B、C节点，而此时B、C也恰好处于LOOKING状态：<br><img src="https://pic3.zhimg.com/v2-db5280d269b09b5a950ce7141dc9ee7a_b.png" alt="enter image description here"><br><strong>STEP 2：</strong>B、C节点处理A的选主消息，其中，B接受A的提议，C拒绝A的提议：<br><img src="https://pic3.zhimg.com/v2-14d24e9fe6f9ff4e90c51a85c702a2d6_b.png" alt="enter image description here"><br>说明：<br>伴随着A的选主消息的一个额外收获是B和C此时都获得了A节点选主的结果（A投票给，记录为<a, a="">），记录该信息，作为后续判断大家是否达成一致的标准。<br><strong>STEP 3：</strong>B将处理结果通知A、C<br><img src="https://pic4.zhimg.com/v2-abb3a37589c2be85b048eae41b0e96ab_b.png" alt="enter image description here"><br>说明：</a,></p>
+<ul>
+<li>因为B更新了自己的投票，从投票给自己变成投票给A，因此根据协议的定义，需要将该消息扩散出去。而C由于拒绝了A的提议，因此，无需扩散消息；</li>
+<li>B将消息扩散给A和C的同时，A和C也就了解了B的投票信息，可以更新本地的投票信息表，例如上面经过B的扩散后，A知道了B节点的投票信息，C知道了A和B节点的投票信息。</li>
+</ul>
+<p><strong>STEP 4：</strong>C同时也发起选主<br><img src="https://pic2.zhimg.com/v2-c72a3ac6203930e1ee50c8f8c0ae210d_b.png" alt="enter image description here"></p>
+<p><strong>STEP 5：</strong>A、B分别处理C的选主请求<br><img src="https://pic4.zhimg.com/v2-328b725c339d8b7be8975ccd3ee1184f_b.png" alt="enter image description here"><br>说明：</p>
+<p>这里A和B判断得出C是最合适的Leader，因此A和B都更新自己的候选Leader为C，同时由于C的消息，A和B都更新自身维护的投票信息，增加C的投票信息。</p>
+<p><strong>STEP 6：</strong>A、B将更新后的信息扩散到其他节点<br><img src="https://pic2.zhimg.com/v2-8a40dc83e22c95b2ec3e0fea1de1c975_b.png" alt="enter image description here"><br>说明：</p>
+<p>因为在第五步中A和B分别将自己的候选Leader变成了C，因此需要将该信息通知到其他节点，其他节点在收到新的投票信息后会更新本地的投票信息列表，如上图。</p>
+<p><strong>STEP 7: </strong>选主结束<br>此时此刻，所有的节点都已经达成了一致：每个节点都同意节点C作为新的Leader。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/31/洞悉CPU Cache/" rel="next" title="洞悉CPU Cache">
+                <i class="fa fa-chevron-left"></i> 洞悉CPU Cache
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -419,6 +498,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -649,11 +732,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
