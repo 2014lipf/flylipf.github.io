@@ -406,15 +406,15 @@
 <li>比较节点B的回复信息以及B此时的运行状态，和自身的投票信息。</li>
 </ul>
 <h4 id="情况1：投票节点是LOOKING状态"><a href="#情况1：投票节点是LOOKING状态" class="headerlink" title="情况1：投票节点是LOOKING状态"></a>情况1：投票节点是LOOKING状态</h4><p>以下以图示法说明此时选主过程：</p>
-<p><strong>STEP 1：</strong>处于LOOKING状态的A发起一次选主请求，并将请求广播至B、C节点，而此时B、C也恰好处于LOOKING状态：<br><img src="https://pic3.zhimg.com/v2-db5280d269b09b5a950ce7141dc9ee7a_b.png" alt="enter image description here"><br><strong>STEP 2：</strong>B、C节点处理A的选主消息，其中，B接受A的提议，C拒绝A的提议：<br><img src="https://pic3.zhimg.com/v2-14d24e9fe6f9ff4e90c51a85c702a2d6_b.png" alt="enter image description here"><br>说明：<br>伴随着A的选主消息的一个额外收获是B和C此时都获得了A节点选主的结果（A投票给，记录为<a, a="">），记录该信息，作为后续判断大家是否达成一致的标准。<br><strong>STEP 3：</strong>B将处理结果通知A、C<br><img src="https://pic4.zhimg.com/v2-abb3a37589c2be85b048eae41b0e96ab_b.png" alt="enter image description here"><br>说明：</a,></p>
+<p><strong>STEP 1：</strong>处于LOOKING状态的A发起一次选主请求，并将请求广播至B、C节点，而此时B、C也恰好处于LOOKING状态：<br><img src="http://pic3.zhimg.com/v2-db5280d269b09b5a950ce7141dc9ee7a_b.png" alt="enter image description here"><br><strong>STEP 2：</strong>B、C节点处理A的选主消息，其中，B接受A的提议，C拒绝A的提议：<br><img src="http://pic3.zhimg.com/v2-14d24e9fe6f9ff4e90c51a85c702a2d6_b.png" alt="enter image description here"><br>说明：<br>伴随着A的选主消息的一个额外收获是B和C此时都获得了A节点选主的结果（A投票给，记录为<a, a="">），记录该信息，作为后续判断大家是否达成一致的标准。<br><strong>STEP 3：</strong>B将处理结果通知A、C<br><img src="http://pic4.zhimg.com/v2-abb3a37589c2be85b048eae41b0e96ab_b.png" alt="enter image description here"><br>说明：</a,></p>
 <ul>
 <li>因为B更新了自己的投票，从投票给自己变成投票给A，因此根据协议的定义，需要将该消息扩散出去。而C由于拒绝了A的提议，因此，无需扩散消息；</li>
 <li>B将消息扩散给A和C的同时，A和C也就了解了B的投票信息，可以更新本地的投票信息表，例如上面经过B的扩散后，A知道了B节点的投票信息，C知道了A和B节点的投票信息。</li>
 </ul>
-<p><strong>STEP 4：</strong>C同时也发起选主<br><img src="https://pic2.zhimg.com/v2-c72a3ac6203930e1ee50c8f8c0ae210d_b.png" alt="enter image description here"></p>
-<p><strong>STEP 5：</strong>A、B分别处理C的选主请求<br><img src="https://pic4.zhimg.com/v2-328b725c339d8b7be8975ccd3ee1184f_b.png" alt="enter image description here"><br>说明：</p>
+<p><strong>STEP 4：</strong>C同时也发起选主<br><img src="http://pic2.zhimg.com/v2-c72a3ac6203930e1ee50c8f8c0ae210d_b.png" alt="enter image description here"></p>
+<p><strong>STEP 5：</strong>A、B分别处理C的选主请求<br><img src="http://pic4.zhimg.com/v2-328b725c339d8b7be8975ccd3ee1184f_b.png" alt="enter image description here"><br>说明：</p>
 <p>这里A和B判断得出C是最合适的Leader，因此A和B都更新自己的候选Leader为C，同时由于C的消息，A和B都更新自身维护的投票信息，增加C的投票信息。</p>
-<p><strong>STEP 6：</strong>A、B将更新后的信息扩散到其他节点<br><img src="https://pic2.zhimg.com/v2-8a40dc83e22c95b2ec3e0fea1de1c975_b.png" alt="enter image description here"><br>说明：</p>
+<p><strong>STEP 6：</strong>A、B将更新后的信息扩散到其他节点<br><img src="http://pic2.zhimg.com/v2-8a40dc83e22c95b2ec3e0fea1de1c975_b.png" alt="enter image description here"><br>说明：</p>
 <p>因为在第五步中A和B分别将自己的候选Leader变成了C，因此需要将该信息通知到其他节点，其他节点在收到新的投票信息后会更新本地的投票信息列表，如上图。</p>
 <p><strong>STEP 7: </strong>选主结束<br>此时此刻，所有的节点都已经达成了一致：每个节点都同意节点C作为新的Leader。</p>
 
